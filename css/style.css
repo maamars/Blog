@@ -34,6 +34,7 @@ h3,
 
 .title-font {
     font-family: 'Dancing Script', cursive;
+    white-space: nowrap;
 }
 
 /* Floating Animations */
@@ -160,6 +161,7 @@ h3,
     color: var(--text-main);
     font-weight: 500;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-link::after {
