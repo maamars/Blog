@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 | My Dreamy Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-[#FFFBFC] min-h-screen">
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html" class="title-font text-3xl font-bold text-[#FF9AA2]">Dreamy Journal</a>
+            <div class="hidden lg:flex gap-1 xl:gap-2">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../acknowledgement.html" class="nav-link">Acknowledgement</a>
+                <a href="../about.html" class="nav-link">My Profile</a>
+                <a href="../school.html" class="nav-link">School Profile</a>
+                <a href="../industry.html" class="nav-link">Industry Profile</a>
+                <a href="index.html" class="nav-link active">OJT Blogs</a>
+                <a href="../gallery.html" class="nav-link">Gallery</a>
+                <a href="#" class="nav-link">Internship Evidence</a>
+                <a href="#" class="nav-link">Eductour</a>
+                <a href="../researchfest.html" class="nav-link">ResearchFest</a>
+                <a href="#" class="nav-link">Trainings/Worshops</a>
+            </div>
+            <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#FFD1DC]/95 z-[60] flex flex-col items-center justify-center gap-8 text-2xl font-semibold hidden">
+        <button class="absolute top-6 right-6 text-3xl" id="close-menu">✕</button>
+        <span class="title-font text-4xl text-white mb-4">Dreamy Journal</span>
+        <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="../about.html" class="hover:text-white transition-colors">My Profile</a>
+        <a href="../school.html" class="hover:text-white transition-colors">School Profile</a>
+        <a href="../industry.html" class="hover:text-white transition-colors">Industry Profile</a>
+        <a href="index.html" class="hover:text-white transition-colors">OJT Blogs</a>
+        <a href="../gallery.html" class="hover:text-white transition-colors">Gallery</a>
+    </div>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-8 flex items-center gap-2 text-sm text-gray-400 font-medium">
+                <a href="index.html" class="hover:text-pink-400 transition-colors">Weeks</a>
+                <span>›</span>
+                <span class="text-gray-600">Week 6</span>
+            </div>
+
+            <header class="mb-16">
+                <span class="text-pink-400 font-bold uppercase tracking-widest text-sm block mb-2">Jan 26 – Jan 30,
+                    2026</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Week 6: Growing Skills</h1>
+                <p class="text-gray-500 italic max-w-2xl">Taking on more complex tasks and improving efficiency.</p>
+            </header>
+
+            <!-- Daily Entries -->
+            <div class="space-y-12">
+                <!-- Day 1 -->
+                <article class="day-card animate-f-up relative">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">Monday, Jan 26</h2>
+                        <span class="text-sm font-semibold text-blue-400">Expanding Horizons</span>
+                    </div>
+                    <div class="prose text-gray-600 leading-relaxed italic mb-6">
+                        "On this day, we have a meeting with our OJT Supervisor. They introduced us as an official
+                        OJT-trainee in the office."
+                    </div>
+
+                    <!-- Image Grid for Day 1 -->
+                    <div class="grid grid-cols-2 lg:grid-cols-2 gap-4">
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January26/639759211_933273169234642_5840333689963012559_n.jpg"
+                                alt="Jan 26 Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January26/642496196_1978733169705136_5217449086715439074_n.jpg"
+                                alt="Jan 26 Image 2" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Day 2 -->
+                <article class="day-card animate-f-up relative">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">Tuesday, Jan 27</h2>
+                        <span class="text-sm font-semibold text-pink-400">Problem Solving</span>
+                    </div>
+                    <div class="prose text-gray-600 leading-relaxed italic mb-6">
+                        "On this day, we work on arranging the entire office for our upcoming visitor in the "
+                    </div>
+
+                    <!-- Image Grid for Day 2 -->
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January27/637302724_1578973743387903_9123493283348585372_n.jpg"
+                                alt="Jan 27 Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January27/638389239_1815891025745427_3457646981781345697_n.jpg"
+                                alt="Jan 27 Image 2" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January27/643053392_769318619151084_8464700805496583874_n.jpg"
+                                alt="Jan 27 Image 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Day 3 -->
+                <article class="day-card animate-f-up relative">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">Wednesday, Jan 28</h2>
+                        <span class="text-sm font-semibold text-lavender-400">Collaboration</span>
+                    </div>
+                    <div class="prose text-gray-600 leading-relaxed italic">
+                        "ABSENT!"
+                    </div>
+                </article>
+
+                <!-- Day 4 -->
+                <article class="day-card animate-f-up relative">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">Thursday, Jan 29</h2>
+                        <span class="text-sm font-semibold text-blue-400">Skill Refinement</span>
+                    </div>
+                    <div class="prose text-gray-600 leading-relaxed italic mb-6">
+                        "Focused on resolving some technical challenges today. Persistence is key."
+                    </div>
+
+                    <!-- Image Grid for Day 4 -->
+                    <div class="grid grid-cols-2 lg:grid-cols-2 gap-4">
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hi dden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January29/637197410_1451725006397498_9158367314736992967_n.jpg"
+                                alt="Jan 29 Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January29/640998284_2815624378782062_2422791569448283087_n.jpg"
+                                alt="Jan 29 Image 2" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Day 5 -->
+                <article class="day-card animate-f-up relative">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">Friday, Jan 30</h2>
+                        <span class="text-sm font-semibold text-pink-400">Week 6 Review</span>
+                    </div>
+                    <div class="prose text-gray-600 leading-relaxed italic mb-6">
+                        "I am given a task to troubleshoot a problem in one of the employee's system."
+                    </div>
+
+                    <!-- Image Grid for Day 5 -->
+                    <div class="grid grid-cols-2 lg:grid-cols-2 gap-4">
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January30/635713154_839047545843763_1365563786192279143_n.jpg"
+                                alt="Jan 30 Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January30/638247132_1278425770833196_7873930575715668179_n.jpg"
+                                alt="Jan 30 Image 2" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-lavender-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January30/641179727_958342703805852_8658799232896229435_n.jpg"
+                                alt="Jan 30 Image 3" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/January30/643762963_1247808090023224_6987292451052207392_n.jpg"
+                                alt="Jan 30 Image 4" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="mt-20 flex justify-between border-t border-pink-100 pt-10">
+                <a href="week5.html" class="text-pink-400 font-bold hover:underline">← Week 5</a>
+                <a href="week7.html" class="text-pink-400 font-bold hover:underline">Week 7 →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white/80 border-t border-pink-50 py-10 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="title-font text-2xl text-pink-300 mb-4">Dreamy Journal</div>
+            <p class="text-sm text-gray-400 font-medium">© 2026 Monthly Journal Project • Created for Academic
+                Submission</p>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

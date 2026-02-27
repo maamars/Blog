@@ -213,6 +213,7 @@ h3,
 
     /* Disable some floaties on mobile */
 }
+
 /* Scroll Reveal Classes */
 .reveal-hidden {
     opacity: 0;
@@ -223,4 +224,8 @@ h3,
 .reveal-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.prose {
+    text-align: justify;
 }
