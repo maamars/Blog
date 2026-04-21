@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,10 +28,15 @@
                 <a href="industry.html" class="nav-link">Industry Profile</a>
                 <a href="weeks/index.html" class="nav-link active">OJT Blogs</a>
                 <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="#" class="nav-link">Internship Evidence</a>
-                <a href="#" class="nav-link">Eductour</a>
-                <a href="researchfest.html" class="nav-link">ResearchFest</a>
-                <a href="#" class="nav-link">Trainings/Worshops</a>
+                <div class="relative group">
+                    <a class="nav-link flex items-center gap-1 cursor-pointer">More <span class="text-[10px]">▼</span></a>
+                    <div class="absolute right-0 top-full mt-2 w-52 bg-white/95 backdrop-blur-md border border-pink-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Internship Evidence</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Eductour</a>
+                        <a href="researchfest.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">ResearchFest</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
+                    </div>
+                </div>
             </div>
             <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
         </div>
@@ -147,7 +152,7 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="acknowledgement.html">Acknowledgement</a></li>
+                        <li><a href="#">Acknowledgement</a></li>
                         <li><a href="my-profile.html">My Profile</a></li>
                         <li><a href="school-profile.html">School Profile</a></li>
                         <li><a href="industry.html">Industry Profile</a></li>
@@ -156,7 +161,7 @@
                         <li><span>EducTour</span></li>
                         <li><span>ResearchFest</span></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><span>Trainings/Worshops</span></li>
+                        <li><span>Trainings/Workshops</span></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -180,3 +185,4 @@
 </body>
 
 </html>
+

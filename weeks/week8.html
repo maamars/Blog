@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,10 +21,15 @@
                 <a href="../industry.html" class="nav-link">Industry Profile</a>
                 <a href="index.html" class="nav-link active">OJT Blogs</a>
                 <a href="../gallery.html" class="nav-link">Gallery</a>
-                <a href="#" class="nav-link">Internship Evidence</a>
-                <a href="#" class="nav-link">Eductour</a>
-                <a href="../researchfest.html" class="nav-link">ResearchFest</a>
-                <a href="#" class="nav-link">Trainings/Worshops</a>
+                <div class="relative group">
+                    <a class="nav-link flex items-center gap-1 cursor-pointer">More <span class="text-[10px]">▼</span></a>
+                    <div class="absolute right-0 top-full mt-2 w-52 bg-white/95 backdrop-blur-md border border-pink-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Internship Evidence</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Eductour</a>
+                        <a href="../researchfest.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">ResearchFest</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
+                    </div>
+                </div>
             </div>
             <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
         </div>
@@ -66,8 +71,27 @@
                         <h2 class="text-2xl font-bold text-gray-800">Monday, Feb 09</h2>
                         <span class="text-sm font-semibold text-blue-400">Collaborative Work</span>
                     </div>
-                    <div class="prose text-gray-600 leading-relaxed italic">
+                    <div class="prose text-gray-600 leading-relaxed italic mb-6">
                         "Engaging more with the team today. Collaborative work is showing great results."
+                    </div>
+
+                    <!-- Image Grid for Day 1 -->
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/feb 9/670338221_1480328123770180_3226664496492915106_n.jpg"
+                                alt="Feb 09 Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/feb 9/670861252_772896259087823_4614631218020795281_n.jpg"
+                                alt="Feb 09 Image 2" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/feb 9/672394774_1779248916380513_8240599311033727999_n.jpg"
+                                alt="Feb 09 Image 3" class="w-full h-full object-cover">
+                        </div>
                     </div>
                 </article>
 
@@ -77,8 +101,32 @@
                         <h2 class="text-2xl font-bold text-gray-800">Tuesday, Feb 10</h2>
                         <span class="text-sm font-semibold text-pink-400">Active Learning</span>
                     </div>
-                    <div class="prose text-gray-600 leading-relaxed italic">
+                    <div class="prose text-gray-600 leading-relaxed italic mb-6">
                         "Learning from the feedback I've received. It's an important part of personal growth."
+                    </div>
+
+                    <!-- Image Grid for Day 2 -->
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 10/663771725_1278702233815737_1807255351736372280_n.jpg"
+                                alt="Feb 10 Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 10/672345469_1318614700172634_556470875179030464_n.jpg"
+                                alt="Feb 10 Image 2" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 10/672644866_941907141977901_3730590517743744373_n.jpg"
+                                alt="Feb 10 Image 3" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 10/673424339_2195336464569059_8109128589795472063_n.jpg"
+                                alt="Feb 10 Image 4" class="w-full h-full object-cover">
+                        </div>
                     </div>
                 </article>
 
@@ -88,8 +136,37 @@
                         <h2 class="text-2xl font-bold text-gray-800">Wednesday, Feb 11</h2>
                         <span class="text-sm font-semibold text-lavender-400">Team Progress</span>
                     </div>
-                    <div class="prose text-gray-600 leading-relaxed italic">
+                    <div class="prose text-gray-600 leading-relaxed italic mb-6">
                         "The overall progress of the team is really encouraging. Everyone is contributing their best."
+                    </div>
+
+                    <!-- Image Grid for Day 3 -->
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 11/670753899_798843599650874_4986640486159092410_n.jpg"
+                                alt="Feb 11 Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 11/671662071_1688874485441227_3062837746603739015_n.jpg"
+                                alt="Feb 11 Image 2" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 11/671715239_1277903564490312_6386256626906228657_n.jpg"
+                                alt="Feb 11 Image 3" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 11/672341346_2511147236022693_7687327406092544226_n.jpg"
+                                alt="Feb 11 Image 4" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/Feb 11/673361865_1839134836781993_3334009855632131909_n.jpg"
+                                alt="Feb 11 Image 5" class="w-full h-full object-cover">
+                        </div>
                     </div>
                 </article>
 
@@ -99,8 +176,32 @@
                         <h2 class="text-2xl font-bold text-gray-800">Thursday, Feb 12</h2>
                         <span class="text-sm font-semibold text-blue-400">Skill Application</span>
                     </div>
-                    <div class="prose text-gray-600 leading-relaxed italic">
+                    <div class="prose text-gray-600 leading-relaxed italic mb-6">
                         "Applying some of the new techniques I've learned to my daily tasks. It's making a difference."
+                    </div>
+
+                    <!-- Image Grid for Day 4 -->
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/feb 12/669761892_1994803074743922_3822009748002300804_n.jpg"
+                                alt="Feb 12 Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/feb 12/670753899_1869412873773865_8044475438610410590_n.jpg"
+                                alt="Feb 12 Image 2" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-pink-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/feb 12/672439554_1306767854660521_5742462390097243498_n.jpg"
+                                alt="Feb 12 Image 3" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 rounded-2xl overflow-hidden shadow-sm hover:scale-105 transition-transform cursor-pointer">
+                            <img src="../images/week1/feb 12/675546838_1940814599885881_6789177239026862163_n.jpg"
+                                alt="Feb 12 Image 4" class="w-full h-full object-cover">
+                        </div>
                     </div>
                 </article>
 
@@ -108,10 +209,10 @@
                 <article class="day-card animate-f-up relative">
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-gray-800">Friday, Feb 13</h2>
-                        <span class="text-sm font-semibold text-pink-400">Week 8 Review</span>
+                        <span class="text-sm font-semibold text-pink-400">Week 8 Wrap-up</span>
                     </div>
                     <div class="prose text-gray-600 leading-relaxed italic">
-                        "Reflecting on a week where I've felt a lot of growth. Looking forward to what comes next."
+                        "ABSENT!"
                     </div>
                 </article>
             </div>
@@ -134,3 +235,4 @@
 </body>
 
 </html>
+

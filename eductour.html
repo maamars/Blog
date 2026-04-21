@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eductour | Discover Cebu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #0a192f; background-color: #fcfcfc; }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+        
+        .bg-ocean-gradient { background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); }
+        .text-sunset { color: #f77f00; }
+        .bg-sunset { background-color: #f77f00; }
+        .bg-sand { background-color: #f5ebe0; }
+        .text-navy { color: #0a192f; }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navigation transition */
+        #main-nav { transition: all 0.4s ease; padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        #main-nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding-top: 1rem; padding-bottom: 1rem;
+        }
+        #main-nav.scrolled .nav-item { color: #0a192f; }
+        #main-nav.not-scrolled .nav-item { color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+        #main-nav.scrolled .nav-brand { color: #0077b6; }
+        
+        .image-zoom-container { overflow: hidden; }
+        .image-zoom-container img { transition: transform 0.7s ease; }
+        .image-zoom-container:hover img { transform: scale(1.08); }
+
+        .masonry-grid { column-count: 1; column-gap: 1.5rem; }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fdfdfd; }
+        ::-webkit-scrollbar-thumb { background: #00b4d8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0077b6; }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="title-font text-3xl font-bold text-[#FF9AA2]">Dreamy Journal</a>
+            <div class="hidden lg:flex gap-1 xl:gap-2">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="acknowledgement.html" class="nav-link">Acknowledgement</a>
+                <a href="about.html" class="nav-link">My Profile</a>
+                <a href="school.html" class="nav-link">School Profile</a>
+                <a href="industry.html" class="nav-link">Industry Profile</a>
+                <a href="weeks/index.html" class="nav-link">OJT Blogs</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <div class="relative group">
+                    <a class="nav-link active flex items-center gap-1 cursor-pointer">More <span class="text-[10px]">▼</span></a>
+                    <div class="absolute right-0 top-full mt-2 w-52 bg-white/95 backdrop-blur-md border border-pink-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Internship Evidence</a>
+                        <a href="eductour.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold text-[#FF9AA2] bg-pink-50/50">Eductour</a>
+                        <a href="researchfest.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">ResearchFest</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
+                    </div>
+                </div>
+            </div>
+            <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#FFD1DC]/95 z-[60] flex flex-col items-center justify-center gap-8 text-2xl font-semibold hidden">
+        <button class="absolute top-6 right-6 text-3xl" id="close-menu">✕</button>
+        <span class="title-font text-4xl text-white mb-4">Dreamy Journal</span>
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="about.html" class="hover:text-white transition-colors">My Profile</a>
+        <a href="school.html" class="hover:text-white transition-colors">School Profile</a>
+        <a href="industry.html" class="hover:text-white transition-colors">Industry Profile</a>
+        <a href="weeks/index.html" class="hover:text-white transition-colors">OJT Blogs</a>
+        <a href="gallery.html" class="hover:text-white transition-colors">Gallery</a>
+        <a href="eductour.html" class="hover:text-white transition-colors">Eductour</a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="h-screen relative flex items-center justify-center parallax" style="background-image: url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/20 to-navy/70"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-5xl">
+            <h1 class="serif text-6xl md:text-8xl lg:text-9xl font-bold mb-6 drop-shadow-xl fade-in-up">Discover Cebu</h1>
+            <p class="text-xl md:text-3xl font-light mb-12 drop-shadow-md tracking-wide fade-in-up" style="transition-delay: 200ms;">Where adventure meets paradise</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 fade-in-up" style="transition-delay: 400ms;">
+                <a href="#destinations" class="px-10 py-4 bg-ocean-gradient text-white rounded-full font-semibold tracking-wider uppercase text-sm shadow-[0_4px_20px_rgba(0,180,216,0.4)] hover:shadow-[0_8px_30px_rgba(0,180,216,0.6)] hover:-translate-y-1 transition-all duration-300">Explore Destinations</a>
+                <a href="#plan" class="px-10 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full font-semibold tracking-wider uppercase text-sm hover:bg-white hover:text-navy transition-all duration-300">Plan Your Trip</a>
+            </div>
+        </div>
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center opacity-80">
+            <span class="text-white text-xs tracking-[0.3em] uppercase mb-3">Scroll</span>
+            <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- Featured Destinations Section -->
+    <section id="destinations" class="py-24 bg-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-sunset font-semibold tracking-[0.2em] uppercase text-sm">Must Visit</span>
+                <h2 class="serif text-4xl md:text-5xl font-bold text-navy mt-4 mb-6">Featured Destinations</h2>
+                <div class="w-16 h-1 bg-ocean-gradient mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 fade-in-up">
+                    <div class="aspect-[4/5] object-cover w-full image-zoom-container">
+                        <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Oslob Whale Sharks" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="serif text-3xl text-white font-bold mb-2">Oslob</h3>
+                        <p class="text-sand/80 font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Whale Shark Watching</p>
+                        <span class="inline-block w-8 h-px bg-sunset mb-2"></span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 fade-in-up" style="transition-delay: 150ms;">
+                    <div class="aspect-[4/5] object-cover w-full image-zoom-container">
+                        <img src="https://images.unsplash.com/photo-1582236371720-379e51f496eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bantayan Island" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="serif text-3xl text-white font-bold mb-2">Bantayan</h3>
+                        <p class="text-sand/80 font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Pristine White Shores</p>
+                        <span class="inline-block w-8 h-px bg-sunset mb-2"></span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 fade-in-up" style="transition-delay: 300ms;">
+                    <div class="aspect-[4/5] object-cover w-full image-zoom-container">
+                        <img src="https://images.unsplash.com/photo-1549419169-22a31776cebf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kawasan Falls" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="serif text-3xl text-white font-bold mb-2">Kawasan</h3>
+                        <p class="text-sand/80 font-light mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Breathtaking Waterfalls</p>
+                        <span class="inline-block w-8 h-px bg-sunset mb-2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Storytelling Section -->
+    <section class="bg-sand py-24 relative overflow-hidden">
+        <div class="absolute -right-20 top-20 w-96 h-96 bg-ocean-gradient rounded-full mix-blend-multiply filter blur-3xl opacity-20 hidden lg:block animate-pulse"></div>
+        <div class="absolute -left-20 bottom-20 w-72 h-72 bg-sunset rounded-full mix-blend-multiply filter blur-3xl opacity-10 hidden lg:block animate-pulse" style="animation-delay: 2s;"></div>
+        
+        <div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16 relative z-10">
+            <div class="lg:w-1/2 fade-in-up">
+                <div class="relative image-zoom-container rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cebu Culture" class="w-full h-auto object-cover rounded-3xl">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-sunset/20 to-transparent mix-blend-overlay"></div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 fade-in-up">
+                <span class="text-sm font-bold tracking-[0.2em] text-[#0077b6] uppercase mb-4 block">The Heart of Visayas</span>
+                <h2 class="serif text-4xl md:text-5xl font-bold text-navy mb-8 leading-tight">More than a destination—it's an experience.</h2>
+                <div class="space-y-6 text-gray-600 font-light text-lg">
+                    <p>Cebu is an islands of contrasts—where historic 16th-century Spanish colonial architecture hums in harmony with high-energy urban centers and tranquil, emerald-green seas.</p>
+                    <p>It's a place where every winding road leads to a hidden waterfall, a secluded white-sand beach, or a summit with panoramic views. The warm hospitality of the locals ensures every moment feels like coming home.</p>
+                </div>
+                <div class="mt-10">
+                    <a href="#gallery" class="inline-flex items-center gap-2 text-sunset font-semibold uppercase tracking-widest text-sm hover:gap-4 transition-all duration-300">
+                        View Gallery <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities / Tours Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-in-up">
+                <div class="max-w-2xl">
+                    <h2 class="serif text-4xl md:text-5xl font-bold text-navy mb-4">Curated Adventures</h2>
+                    <p class="text-gray-500 font-light text-lg">Discover handpicked experiences designed for true explorers.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="p-8 rounded-3xl bg-gray-50 hover:bg-[#0077b6]/5 border border-gray-100 hover:border-[#0077b6]/20 transition-all duration-300 group fade-in-up">
+                    <div class="w-16 h-16 rounded-2xl bg-ocean-gradient text-white flex items-center justify-center mb-8 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="serif text-2xl font-bold text-navy mb-4">Island Hopping</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Sail across crystal clear waters to secluded sandbars, vibrant coral reefs, and uninhabited tropical islands.</p>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="p-8 rounded-3xl bg-gray-50 hover:bg-[#0077b6]/5 border border-gray-100 hover:border-[#0077b6]/20 transition-all duration-300 group fade-in-up" style="transition-delay: 150ms;">
+                    <div class="w-16 h-16 rounded-2xl bg-ocean-gradient text-white flex items-center justify-center mb-8 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="serif text-2xl font-bold text-navy mb-4">Diving & Snorkeling</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Dive into Moalboal's famous sardine run or spot sea turtles in their natural thriving underwater habitat.</p>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="p-8 rounded-3xl bg-gray-50 hover:bg-[#0077b6]/5 border border-gray-100 hover:border-[#0077b6]/20 transition-all duration-300 group fade-in-up" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 rounded-2xl bg-ocean-gradient text-white flex items-center justify-center mb-8 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="serif text-2xl font-bold text-navy mb-4">Waterfalls & Hiking</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Trek through lush jungles to discover spectacular multi-tiered falls and breathtaking mountain peaks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery (Masonry Grid) -->
+    <section id="gallery" class="py-24 bg-[#0a192f] text-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="serif text-4xl md:text-5xl font-bold mb-6">Visual Journey</h2>
+                <p class="text-gray-400 font-light max-w-2xl mx-auto">Get lost in the vibrant colors and pristine landscapes of Cebu. Every corner tells a new story.</p>
+            </div>
+
+            <div class="masonry-grid fade-in-up">
+                <div class="masonry-item relative group rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center backdrop-blur-sm">
+                        <h4 class="serif text-2xl font-bold text-white translate-y-4 group-hover:translate-y-0 transition duration-500">Malapascua</h4>
+                    </div>
+                </div>
+                <div class="masonry-item relative group rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center backdrop-blur-sm">
+                        <h4 class="serif text-2xl font-bold text-white translate-y-4 group-hover:translate-y-0 transition duration-500">White Sands</h4>
+                    </div>
+                </div>
+                <div class="masonry-item relative group rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center backdrop-blur-sm">
+                        <h4 class="serif text-2xl font-bold text-white translate-y-4 group-hover:translate-y-0 transition duration-500">Moalboal</h4>
+                    </div>
+                </div>
+                <div class="masonry-item relative group rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center backdrop-blur-sm">
+                        <h4 class="serif text-2xl font-bold text-white translate-y-4 group-hover:translate-y-0 transition duration-500">Hidden Cove</h4>
+                    </div>
+                </div>
+                <div class="masonry-item relative group rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1549419169-22a31776cebf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center backdrop-blur-sm">
+                        <h4 class="serif text-2xl font-bold text-white translate-y-4 group-hover:translate-y-0 transition duration-500">Sumilon Island</h4>
+                    </div>
+                </div>
+                <div class="masonry-item relative group rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1582236371720-379e51f496eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center backdrop-blur-sm">
+                        <h4 class="serif text-2xl font-bold text-white translate-y-4 group-hover:translate-y-0 transition duration-500">Local Life</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Your Trip Section -->
+    <section id="plan" class="py-32 relative parallax flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-navy/80"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="serif text-5xl md:text-6xl font-bold text-white mb-8 fade-in-up">Ready for Paradise?</h2>
+            <p class="text-xl text-sand/90 font-light mb-12 max-w-2xl mx-auto fade-in-up" style="transition-delay: 100ms;">Your unforgettable tropical getaway starts here. Let us help you craft the perfect itinerary.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 fade-in-up" style="transition-delay: 200ms;">
+                <button class="px-12 py-5 bg-sunset text-white rounded-full font-bold tracking-wider uppercase text-sm shadow-[0_4px_20px_rgba(247,127,0,0.4)] hover:shadow-[0_8px_30px_rgba(247,127,0,0.6)] hover:-translate-y-1 transition-all duration-300">Book a Tour</button>
+                <button class="px-12 py-5 bg-white text-navy rounded-full font-bold tracking-wider uppercase text-sm hover:bg-gray-100 shadow-xl hover:-translate-y-1 transition-all duration-300">Find Hotels</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy border-t border-white/10 pt-20 pb-10 text-sand">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 fade-in-up">
+                <div>
+                    <h3 class="serif text-3xl font-bold text-white mb-6">Cebu.</h3>
+                    <p class="font-light text-sand/70 mb-6">A curated visually immersive tourism experience highlighting the beauty of Cebu's beaches, waterfalls, and culture.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full border border-sand/20 flex items-center justify-center hover:bg-sunset hover:border-sunset transition duration-300">
+                            <span class="sr-only">Facebook</span> f
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-sand/20 flex items-center justify-center hover:bg-sunset hover:border-sunset transition duration-300">
+                            <span class="sr-only">Instagram</span> in
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-sand/20 flex items-center justify-center hover:bg-sunset hover:border-sunset transition duration-300">
+                            <span class="sr-only">Twitter</span> tw
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-widest text-sm mb-6">Explore</h4>
+                    <ul class="space-y-3 font-light text-sand/70">
+                        <li><a href="#" class="hover:text-sunset transition">Destinations</a></li>
+                        <li><a href="#" class="hover:text-sunset transition">Tours & Activities</a></li>
+                        <li><a href="#" class="hover:text-sunset transition">Travel Tips</a></li>
+                        <li><a href="#" class="hover:text-sunset transition">Accommodation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-widest text-sm mb-6">Contact Info</h4>
+                    <ul class="space-y-3 font-light text-sand/70">
+                        <li>Cebu City, Philippines</li>
+                        <li>info@discovercebu.ph</li>
+                        <li>+63 900 123 4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-sm font-light text-sand/50 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 Eductour Cebu Experience. Designed for immersion.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for animations and interactions -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                navbar.classList.remove('not-scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.classList.add('not-scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

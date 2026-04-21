@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-[#FFFBFC] min-h-screen">
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-pink-100">
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="../index.html" class="title-font text-3xl font-bold text-[#FF9AA2]">Dreamy Journal</a>
             <div class="hidden lg:flex gap-1 xl:gap-2">
@@ -21,10 +21,15 @@
                 <a href="../industry.html" class="nav-link">Industry Profile</a>
                 <a href="index.html" class="nav-link active">OJT Blogs</a>
                 <a href="../gallery.html" class="nav-link">Gallery</a>
-                <a href="#" class="nav-link">Internship Evidence</a>
-                <a href="#" class="nav-link">Eductour</a>
-                <a href="../researchfest.html" class="nav-link">ResearchFest</a>
-                <a href="#" class="nav-link">Trainings/Worshops</a>
+                <div class="relative group">
+                    <a class="nav-link flex items-center gap-1 cursor-pointer">More <span class="text-[10px]">▼</span></a>
+                    <div class="absolute right-0 top-full mt-2 w-52 bg-white/95 backdrop-blur-md border border-pink-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Internship Evidence</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Eductour</a>
+                        <a href="../researchfest.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">ResearchFest</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
+                    </div>
+                </div>
             </div>
             <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
         </div>
@@ -63,11 +68,10 @@
                 <article class="day-card animate-f-up relative">
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-gray-800">Monday, Mar 23</h2>
-                        <span class="text-sm font-semibold text-blue-400">Final Reflections</span>
+                        <span class="text-sm font-semibold text-blue-400">Absent</span>
                     </div>
                     <div class="prose text-gray-600 leading-relaxed italic">
-                        "Starting the final week of my documentation. It's been an incredible journey of growth and
-                        learning."
+                        "ABSENT!"
                     </div>
                 </article>
 
@@ -75,11 +79,10 @@
                 <article class="day-card animate-f-up relative">
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-gray-800">Tuesday, Mar 24</h2>
-                        <span class="text-sm font-semibold text-pink-400">Project Wrap-up</span>
+                        <span class="text-sm font-semibold text-pink-400">Field Trip in Cebu</span>
                     </div>
                     <div class="prose text-gray-600 leading-relaxed italic">
-                        "Wrapping up the final details of my project. Looking back at the challenges and successes along
-                        the way."
+                        "FIELD TRIP IN CEBU!"
                     </div>
                 </article>
 
@@ -87,11 +90,10 @@
                 <article class="day-card animate-f-up relative">
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-gray-800">Wednesday, Mar 25</h2>
-                        <span class="text-sm font-semibold text-lavender-400">Journey Assessment</span>
+                        <span class="text-sm font-semibold text-lavender-400">Field Trip in Cebu</span>
                     </div>
                     <div class="prose text-gray-600 leading-relaxed italic">
-                        "Assessing my entire journey. It's rewarding to see how much I've accomplished and how much I've
-                        grown."
+                        "FIELD TRIP IN CEBU!"
                     </div>
                 </article>
 
@@ -99,11 +101,10 @@
                 <article class="day-card animate-f-up relative">
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-gray-800">Thursday, Mar 26</h2>
-                        <span class="text-sm font-semibold text-blue-400">Gratitude</span>
+                        <span class="text-sm font-semibold text-blue-400">Field Trip in Cebu</span>
                     </div>
                     <div class="prose text-gray-600 leading-relaxed italic">
-                        "Expressing gratitude for all the support and guidance I've received. This journey wouldn't have
-                        been possible without it."
+                        "FIELD TRIP IN CEBU!"
                     </div>
                 </article>
 
@@ -111,18 +112,17 @@
                 <article class="day-card animate-f-up relative">
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-gray-800">Friday, Mar 27</h2>
-                        <span class="text-sm font-semibold text-pink-400">Closing Thoughts</span>
+                        <span class="text-sm font-semibold text-pink-400">Field Trip in Cebu</span>
                     </div>
                     <div class="prose text-gray-600 leading-relaxed italic">
-                        "Finalizing my thoughts as I close this chapter. Excited for the next adventure that lies
-                        ahead."
+                        "FIELD TRIP IN CEBU!"
                     </div>
                 </article>
             </div>
 
             <div class="mt-20 flex justify-between border-t border-pink-100 pt-10">
                 <a href="week13.html" class="text-pink-400 font-bold hover:underline">← Week 13</a>
-                <span class="text-gray-300">End of OJT Period</span>
+                <a href="week15.html" class="text-pink-400 font-bold hover:underline">Week 15 →</a>
             </div>
         </div>
     </main>
@@ -138,3 +138,4 @@
 </body>
 
 </html>
+
