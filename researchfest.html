@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Fest 2025 | Dreamy Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 192, 203, 0.3);
+            border-radius: 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFBFC] min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="title-font text-3xl font-bold text-[#FF9AA2]">Dreamy Journal</a>
+            <div class="hidden lg:flex gap-1 xl:gap-2">
+                <a href="index.html" class="nav-link ">Home</a>
+                <a href="acknowledgement.html" class="nav-link ">Acknowledgement</a>
+                <a href="about.html" class="nav-link ">My Profile</a>
+                <a href="school.html" class="nav-link ">School Profile</a>
+                <a href="industry.html" class="nav-link ">Industry Profile</a>
+                <a href="weeks/index.html" class="nav-link ">OJT Blogs</a>
+                <a href="gallery.html" class="nav-link ">Gallery</a>
+                <div class="relative group">
+                    <a class="nav-link flex items-center gap-1 cursor-pointer active">More <span
+                            class="text-[10px]">▼</span></a>
+                    <div
+                        class="absolute right-0 top-full mt-2 w-52 bg-white/95 backdrop-blur-md border border-pink-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
+                        <a href="researchfest.html"
+                            class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold text-[#FF9AA2] bg-pink-50/50">Research
+                            Fest</a>
+                        <a href="eductour.html"
+                            class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold ">Eductour</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Internship
+                            Evidence</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
+                    </div>
+                </div>
+            </div>
+            <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="h-[60vh] relative flex items-center justify-center parallax"
+        style="background-image: url('ResearchFest/rf1.jpg');">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <span
+                class="inline-block px-4 py-1 bg-pink-400 text-white rounded-full text-xs font-bold mb-6 tracking-widest uppercase">Academic
+                Excellence</span>
+            <h1 class="serif text-5xl md:text-7xl text-white font-bold mb-6">Research Fest 2025</h1>
+            <p class="text-white/90 text-xl font-light max-w-2xl mx-auto italic">"Innovation, Discovery, and the Future
+                of Technology"</p>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="serif text-4xl font-bold text-[#5D5D5D] mb-4">Event Highlights</h2>
+                <div class="w-20 h-1 bg-pink-200 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Image 1 -->
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg aspect-[4/5]">
+                    <img src="ResearchFest/rf2.jpg" alt="Research Fest"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <p class="text-white font-medium">Innovation Showcase</p>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg aspect-[4/5]">
+                    <img src="ResearchFest/rf3.jpg" alt="Research Fest"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <p class="text-white font-medium">Project Presentation</p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg aspect-[4/5]">
+                    <img src="ResearchFest/rf4.jpg" alt="Research Fest"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <p class="text-white font-medium">Research Discussion</p>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg aspect-[4/5]">
+                    <img src="ResearchFest/rf5.jpg" alt="Research Fest"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <p class="text-white font-medium">Peer Collaboration</p>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg aspect-[4/5]">
+                    <img src="ResearchFest/rf6.jpg" alt="Research Fest"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <p class="text-white font-medium">Technical Review</p>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg aspect-[4/5]">
+                    <img src="ResearchFest/rf7.jpg" alt="Research Fest"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <p class="text-white font-medium">Awarding Ceremony</p>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg aspect-[4/5]">
+                    <img src="ResearchFest/rf8.jpg" alt="Research Fest"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <p class="text-white font-medium">Exhibition Hall</p>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg aspect-[4/5]">
+                    <img src="ResearchFest/rf9.jpg" alt="Research Fest"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <p class="text-white font-medium">PABEBE GURLS SLAYING</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Documentary Section -->
+    <section class="py-20 bg-pink-50/30">
+        <div class="container mx-auto px-6 text-center">
+            <div class="glass-card p-12 max-w-4xl mx-auto">
+                <h2 class="serif text-4xl font-bold text-[#5D5D5D] mb-6">Watch the Systems Overview</h2>
+                <p class="text-gray-500 mb-10 text-lg">Experience the full system overview from the users perspective to
+                    the staff.</p>
+                <a href="https://youtu.be/FipbPLp8jAw?si=CNJ2_KVsscL2BNbI" target="_blank"
+                    class="inline-flex items-center gap-3 px-10 py-5 bg-pink-400 text-white rounded-2xl shadow-xl hover:shadow-pink-200 hover:-translate-y-1 transition-all font-bold text-lg">
+                    <span>Watch on YouTube</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-play">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white/80 border-t border-pink-50 py-10 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="title-font text-2xl text-pink-300 mb-4">Dreamy Journal</div>
+            <p class="text-sm text-gray-400 font-medium">© 2026 Monthly Journal Project • Research Fest Documentation
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        }
+        if (closeMenu && mobileMenu) {
+            closeMenu.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        }
+    </script>
+</body>
+
+</html>
