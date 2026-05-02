@@ -59,15 +59,28 @@
         /* Testimonial Cards / Slider */
         .testimonial-card {
             background-color: #FFFFFF;
-            border: 1px solid #F0F0F0;
-            border-radius: 16px;
+            border: 1px solid #EAEAEA;
+            border-radius: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: grab;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .testimonial-card:active {
+            cursor: grabbing;
+        }
+
+        .testimonial-card img {
+            pointer-events: none;
+            -webkit-user-drag: none;
         }
 
         .testimonial-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
-            border-color: #E8E6E1;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+            border-color: #D1D1D1;
         }
 
         /* Custom Accent Colors */
@@ -103,7 +116,7 @@
 
 <body class="min-h-screen antialiased">
     <!-- Navigation (Dreamy Tabs Kept Intact) -->
-        <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="index.html" class="title-font text-3xl font-bold text-[#FF9AA2]">Dreamy Journal</a>
             <div class="hidden lg:flex gap-1 xl:gap-2">
@@ -115,12 +128,20 @@
                 <a href="weeks/index.html" class="nav-link ">OJT Blogs</a>
                 <a href="gallery.html" class="nav-link ">Gallery</a>
                 <div class="relative group">
-                    <a class="nav-link flex items-center gap-1 cursor-pointer ">More <span class="text-[10px]">▼</span></a>
-                    <div class="absolute right-0 top-full mt-2 w-52 bg-white/95 backdrop-blur-md border border-pink-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
-                        <a href="researchfest.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold ">Research Fest</a>
-                        <a href="eductour.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold ">Eductour</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Internship Evidence</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
+                    <a class="nav-link flex items-center gap-1 cursor-pointer ">More <span
+                            class="text-[10px]">▼</span></a>
+                    <div
+                        class="absolute right-0 top-full mt-2 w-52 bg-white/95 backdrop-blur-md border border-pink-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
+                        <a href="researchfest.html"
+                            class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold ">Research
+                            Fest</a>
+                        <a href="eductour.html"
+                            class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold ">Eductour</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Internship
+                            Evidence</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
                     </div>
                 </div>
             </div>
@@ -129,7 +150,7 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
+    <div id="mobile-menu"
         class="fixed inset-0 bg-[#FFD1DC]/95 z-[60] flex flex-col items-center justify-center gap-8 text-2xl font-semibold hidden">
         <button class="absolute top-6 right-6 text-3xl" id="close-menu">✕</button>
         <span class="title-font text-4xl text-white mb-4">Dreamy Journal</span>
@@ -141,18 +162,120 @@
     </div>
 
     <!-- Hero Section (Minimal + Emotional) -->
-    <header class="pt-48 pb-24 px-6 relative bg-accent-beige">
+    <header class="pt-32 pb-8 px-6 relative bg-accent-beige">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-80 pointer-events-none"></div>
         <div class="container mx-auto max-w-4xl text-center relative z-10">
-            <h1 class="serif-heading text-5xl md:text-6xl text-gray-800 mb-8 tracking-wide font-light fade-in">
+            <h1 class="serif-heading text-5xl md:text-6xl text-gray-800 mb-6 tracking-wide font-light fade-in">
                 With Gratitude
             </h1>
             <p class="text-lg md:text-xl text-gray-500 font-light max-w-2xl mx-auto leading-relaxed fade-in delay-1">
                 "This work would not have been possible without the people who supported and believed in me."
             </p>
-            <div class="w-16 h-px bg-gray-300 mx-auto mt-12 fade-in delay-2"></div>
+            <div class="w-16 h-px bg-gray-300 mx-auto mt-6 fade-in delay-2"></div>
         </div>
     </header>
+
+    <!-- Acknowledgement Messages (Testimonial Style) -->
+    <section class="py-12 px-6 bg-[#FAFAFA]">
+        <div class="container mx-auto max-w-6xl">
+            <div id="testimonial-slider"
+                class="flex overflow-x-auto gap-8 pb-12 pt-4 px-4 snap-x snap-mandatory hide-scrollbar fade-in delay-3">
+
+                <!-- Sir Dean Card -->
+                <div class="testimonial-card flex-none w-[85vw] md:w-[380px] snap-center flex flex-col overflow-hidden">
+                    <div class="h-[400px] overflow-hidden relative group">
+                        <img src="images/week1/sirdean.jpg" alt="Sir Dean"
+                            class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-700">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40">
+                        </div>
+                    </div>
+                    <div class="p-10 pt-6 flex-grow flex flex-col">
+                        <p class="text-gray-600 italic font-light leading-relaxed mb-8 text-lg flex-grow">
+                            "For providing the vision and leadership that made this internship possible. Your support
+                            for student excellence is truly inspiring."
+                        </p>
+                        <div class="mt-auto">
+                            <p class="serif-heading text-gray-800 text-xl">Philipcris C. Encarnacion</p>
+                            <p class="text-sm text-gray-400 tracking-widest uppercase mt-1"> CCS Dean</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 1 (Supervisor) -->
+                <div class="testimonial-card flex-none w-[85vw] md:w-[380px] snap-center flex flex-col overflow-hidden">
+                    <div class="h-[400px] overflow-hidden relative group">
+                        <img src="images/week1/maamzena.png" alt="Zena May P. Dumandos"
+                            class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-700">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40">
+                        </div>
+                    </div>
+                    <div class="p-10 pt-6 flex-grow flex flex-col">
+                        <p class="text-gray-600 italic font-light leading-relaxed mb-8 text-lg flex-grow">
+                            "For your guidance and patience throughout this journey. Your wisdom significantly shaped
+                            this outcome."
+                        </p>
+                        <div class="mt-auto">
+                            <p class="serif-heading text-gray-800 text-xl">Zena May P. Dumandos</p>
+                            <p class="text-sm text-gray-400 tracking-widest uppercase mt-1">OJT Supervisor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Panelist) -->
+                <div class="testimonial-card flex-none w-[85vw] md:w-[380px] snap-center flex flex-col overflow-hidden">
+                    <div class="h-[400px] overflow-hidden relative group">
+                        <img src="images/week1/maamemily.png" alt="Ma'am Emily"
+                            class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-700">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40">
+                        </div>
+                    </div>
+                    <div class="p-10 pt-6 flex-grow flex flex-col">
+                        <p class="text-gray-600 italic font-light leading-relaxed mb-8 text-lg flex-grow">
+                            "For your guidance and support as a chief and for rcognizing our skills."
+                        </p>
+                        <div class="mt-auto">
+                            <p class="serif-heading text-gray-800 text-xl">Emily T. Silva</p>
+                            <p class="text-sm text-gray-400 tracking-widest uppercase mt-1">TMSD Chief </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 (Ma'am Nor) -->
+                <div class="testimonial-card flex-none w-[85vw] md:w-[380px] snap-center flex flex-col overflow-hidden">
+                    <div class="h-[400px] overflow-hidden relative group">
+                        <img src="images/week1/maamnor.png" alt="Ma'am Nor"
+                            class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-700">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40">
+                        </div>
+                    </div>
+                    <div class="p-10 pt-6 flex-grow flex flex-col">
+                        <p class="text-gray-600 italic font-light leading-relaxed mb-8 text-lg flex-grow">
+                            "For accepting us in your office and for your guidance and support throughout our
+                            internship."
+                        </p>
+                        <div class="mt-auto">
+                            <p class="serif-heading text-gray-800 text-xl">Nordaty I. Caluang</p>
+                            <p class="text-sm text-gray-400 tracking-widest uppercase mt-1">Administrative Office V/HRMO
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Slider Visual Indicators -->
+            <div class="flex justify-center gap-2 mt-4 fade-in delay-3">
+                <div class="w-2 h-2 rounded-full bg-gray-400"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Main Acknowledgement Content -->
     <section class="py-20 px-6 bg-white relative z-10">
@@ -190,120 +313,8 @@
         </div>
     </section>
 
-    <!-- Acknowledgement Messages (Testimonial Style) -->
-    <section class="py-24 px-6 bg-[#FAFAFA]">
-        <div class="container mx-auto max-w-6xl">
-            <div
-                class="flex overflow-x-auto gap-8 pb-12 pt-4 px-4 snap-x snap-mandatory hide-scrollbar fade-in delay-3">
 
-                <!-- Card 1 -->
-                <div class="testimonial-card flex-none w-[85vw] md:w-[400px] p-10 snap-center flex flex-col">
-                    <svg class="w-8 h-8 text-accent-sage/40 mb-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                    <p class="text-gray-600 italic font-light leading-relaxed mb-8 text-lg flex-grow">
-                        "For your guidance and patience throughout this journey. Your wisdom significantly shaped this
-                        outcome."
-                    </p>
-                    <div class="mt-auto">
-                        <p class="serif-heading text-gray-800 text-xl">Adviser</p>
-                        <p class="text-sm text-gray-400 tracking-widest uppercase mt-1">Mentorship</p>
-                    </div>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="testimonial-card flex-none w-[85vw] md:w-[400px] p-10 snap-center flex flex-col">
-                    <svg class="w-8 h-8 text-accent-sage/40 mb-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                    <p class="text-gray-600 italic font-light leading-relaxed mb-8 text-lg flex-grow">
-                        "For the insightful critiques and objective evaluations. Your high standards pushed me to
-                        excel."
-                    </p>
-                    <div class="mt-auto">
-                        <p class="serif-heading text-gray-800 text-xl">Panelists</p>
-                        <p class="text-sm text-gray-400 tracking-widest uppercase mt-1">Evaluation</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="testimonial-card flex-none w-[85vw] md:w-[400px] p-10 snap-center flex flex-col">
-                    <svg class="w-8 h-8 text-accent-sage/40 mb-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                    <p class="text-gray-600 italic font-light leading-relaxed mb-8 text-lg flex-grow">
-                        "For your unwavering support and encouragement during the hardest days. This is for you."
-                    </p>
-                    <div class="mt-auto">
-                        <p class="serif-heading text-gray-800 text-xl">Family</p>
-                        <p class="text-sm text-gray-400 tracking-widest uppercase mt-1">Foundation</p>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="testimonial-card flex-none w-[85vw] md:w-[400px] p-10 snap-center flex flex-col">
-                    <svg class="w-8 h-8 text-accent-sage/40 mb-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                    <p class="text-gray-600 italic font-light leading-relaxed mb-8 text-lg flex-grow">
-                        "For sharing the late-night reviews and the mutual understanding of this shared path."
-                    </p>
-                    <div class="mt-auto">
-                        <p class="serif-heading text-gray-800 text-xl">Friends & Peers</p>
-                        <p class="text-sm text-gray-400 tracking-widest uppercase mt-1">Camaraderie</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slider Visual Indicators -->
-            <div class="flex justify-center gap-2 mt-4 fade-in delay-3">
-                <div class="w-2 h-2 rounded-full bg-gray-400"></div>
-                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-                <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contributors Section -->
-    <section class="py-24 px-6 bg-white">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="serif-heading text-3xl text-center text-gray-800 mb-16 tracking-wide">Honored Contributors</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Group 1 -->
-                <div class="contributor-item pb-6">
-                    <p class="text-accent-sage text-sm tracking-widest uppercase mb-2">Academic Guidance</p>
-                    <h3 class="serif-heading text-2xl text-gray-800 mb-1">Adviser</h3>
-                    <p class="text-gray-500 font-light text-sm">For directing the research trajectory.</p>
-                </div>
-
-                <!-- Group 2 -->
-                <div class="contributor-item pb-6">
-                    <p class="text-accent-sage text-sm tracking-widest uppercase mb-2">Review & Validation</p>
-                    <h3 class="serif-heading text-2xl text-gray-800 mb-1">Panelists</h3>
-                    <p class="text-gray-500 font-light text-sm">For critical insights and refinement.</p>
-                </div>
-
-                <!-- Group 3 -->
-                <div class="contributor-item pb-6">
-                    <p class="text-accent-sage text-sm tracking-widest uppercase mb-2">Foundation</p>
-                    <h3 class="serif-heading text-2xl text-gray-800 mb-1">School / Institution</h3>
-                    <p class="text-gray-500 font-light text-sm">For providing the environment to grow.</p>
-                </div>
-
-                <!-- Group 4 -->
-                <div class="contributor-item pb-6">
-                    <p class="text-accent-sage text-sm tracking-widest uppercase mb-2">Moral Support</p>
-                    <h3 class="serif-heading text-2xl text-gray-800 mb-1">Family & Friends</h3>
-                    <p class="text-gray-500 font-light text-sm">For endless patience and love.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Closing Section -->
     <section class="py-32 px-6 bg-accent-beige relative overflow-hidden">
@@ -341,11 +352,43 @@
             menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
             closeMenu.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         }
+
+        // --- DRAG TO SCROLL SCRIPT ---
+        const slider = document.getElementById('testimonial-slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        if (slider) {
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.style.cursor = 'grabbing';
+                slider.style.scrollSnapType = 'none'; // Disable snap during drag
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+                slider.style.scrollSnapType = 'x mandatory';
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+                slider.style.scrollSnapType = 'x mandatory';
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // scroll-fast
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
     </script>
 </body>
 
 </html>
-
-
-
-

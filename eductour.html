@@ -8,14 +8,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        body { font-family: 'Inter', sans-serif; color: #0a192f; background-color: #fcfcfc; }
+        body { font-family: 'Inter', sans-serif; color: #1e293b; background-color: #f8fafc; }
         h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
         
         .bg-ocean-gradient { background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); }
-        .text-sunset { color: #f77f00; }
-        .bg-sunset { background-color: #f77f00; }
-        .bg-sand { background-color: #f5ebe0; }
-        .text-navy { color: #0a192f; }
+        .text-sunset { color: #f43f5e; }
+        .bg-sunset { background-color: #f43f5e; }
+        .text-navy { color: #0f172a; }
+
+        .glass-premium {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .journal-card {
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 4rem;
+            position: relative;
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.08), 0 18px 36px -18px rgba(0,0,0,0.05);
+            border: 1px solid #f1f5f9;
+        }
+
+        .journal-card::before {
+            content: '"';
+            position: absolute;
+            top: 2rem;
+            left: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            color: #f1f5f9;
+            line-height: 1;
+            z-index: 0;
+        }
 
         .parallax {
             background-attachment: fixed;
@@ -26,40 +53,39 @@
 
         .fade-in-up {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .fade-in-up.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Navigation transition */
-        #main-nav { transition: all 0.4s ease; padding-top: 1.5rem; padding-bottom: 1.5rem; }
-        #main-nav.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            padding-top: 1rem; padding-bottom: 1rem;
+        .image-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
         }
-        #main-nav.scrolled .nav-item { color: #0a192f; }
-        #main-nav.not-scrolled .nav-item { color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
-        #main-nav.scrolled .nav-brand { color: #0077b6; }
-        
-        .image-zoom-container { overflow: hidden; }
-        .image-zoom-container img { transition: transform 0.7s ease; }
-        .image-zoom-container:hover img { transform: scale(1.08); }
+        .image-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+        }
 
-        .masonry-grid { column-count: 1; column-gap: 1.5rem; }
+        .masonry-grid { column-count: 1; column-gap: 1.5rem; width: 100%; }
         @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
         @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
-        .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #fdfdfd; }
-        ::-webkit-scrollbar-thumb { background: #00b4d8; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0077b6; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden antialiased">
@@ -103,20 +129,19 @@
 
     <!-- Hero Section -->
     <header class="h-screen relative flex items-center justify-center parallax" style="background-image: url('images/week1/eductour/cebu/cebu1.jpg');">
-        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative z-10 text-center px-6 max-w-5xl">
-            <div class="bg-black/30 backdrop-blur-md p-16 rounded-[60px] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <h1 class="serif text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] fade-in-up">Discover Cebu</h1>
-                <p class="text-xl md:text-3xl font-light mb-12 text-white/90 drop-shadow-lg tracking-[0.2em] uppercase fade-in-up" style="transition-delay: 200ms;">Where adventure meets paradise</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-8 fade-in-up" style="transition-delay: 400ms;">
-                    <a href="#destinations" class="px-12 py-5 bg-pink-400 text-white rounded-full font-bold tracking-widest uppercase text-sm shadow-[0_10px_30px_rgba(244,114,182,0.4)] hover:bg-pink-500 hover:shadow-[0_15px_40px_rgba(244,114,182,0.6)] hover:-translate-y-1 transition-all duration-300">Explore Destinations</a>
-                    <a href="#plan" class="px-12 py-5 bg-white/10 backdrop-blur-xl border border-white/40 text-white rounded-full font-bold tracking-widest uppercase text-sm hover:bg-white hover:text-pink-400 hover:shadow-[0_15px_40px_rgba(255,255,255,0.2)] hover:-translate-y-1 transition-all duration-300">Plan Your Trip</a>
+            <div class="bg-black/20 backdrop-blur-xl p-16 rounded-[80px] border border-white/20 shadow-[0_40px_100px_rgba(0,0,0,0.3)] fade-in-up">
+                <h1 class="serif text-7xl md:text-9xl font-bold mb-6 text-white tracking-tight">Discover <span class="gradient-text italic">Cebu</span></h1>
+                <p class="text-xl md:text-2xl font-light mb-12 text-white/80 tracking-[0.4em] uppercase">Adventure meets Paradise</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-8">
+                    <a href="#destinations" class="px-12 py-5 bg-gradient-to-r from-pink-400 to-rose-500 text-white rounded-full font-bold tracking-widest uppercase text-sm shadow-xl hover:shadow-pink-200 hover:-translate-y-1 transition-all duration-300">Explore Now</a>
+                    <a href="#plan" class="px-12 py-5 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full font-bold tracking-widest uppercase text-sm hover:bg-white hover:text-navy transition-all duration-300">Plan Journey</a>
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center opacity-80">
-            <span class="text-white text-xs tracking-[0.3em] uppercase mb-3">Scroll</span>
-            <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <div class="w-px h-16 bg-gradient-to-b from-white to-transparent"></div>
         </div>
     </header>
 
@@ -216,41 +241,107 @@
             </div>
 
             <div class="masonry-grid fade-in-up">
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/651620456_1122690263343449_1223680906362276441_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/651620456_1122690263343449_1223680906362276441_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/668991950_967173386170725_8448434369248329603_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/668991950_967173386170725_8448434369248329603_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/670281239_2990640601133350_5756975480984183183_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/670281239_2990640601133350_5756975480984183183_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/670746373_952254254209652_4456986023189403992_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/670746373_952254254209652_4456986023189403992_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/671452784_1514002823777008_721075151804048218_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/671452784_1514002823777008_721075151804048218_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/672633055_1580883163019354_1311658158700731520_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/672633055_1580883163019354_1311658158700731520_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/673414544_1629837821557499_5042730541512289987_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/673414544_1629837821557499_5042730541512289987_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/674625512_2184349375686553_8054810241368570083_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/674625512_2184349375686553_8054810241368570083_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/674964369_3193068204206000_2118185163284222695_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/674964369_3193068204206000_2118185163284222695_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/675265873_1503672721302281_88101004454300469_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/675265873_1503672721302281_88101004454300469_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/675563132_841201291660660_7842254771375456597_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/675563132_841201291660660_7842254771375456597_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
                 </div>
-                <div class="masonry-item relative group rounded-xl overflow-hidden">
-                    <img src="images/week1/eductour/cebugallery/675616556_1819431185735020_3889010098247793880_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                <div class="image-card relative group rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="images/week1/eductour/cebugallery/675616556_1819431185735020_3889010098247793880_n.jpg" alt="Cebu Gallery Image" class="w-full h-auto object-cover transform transition duration-700">
+                </div>
+            </div>
+
+            <!-- Personal Reflection -->
+            <div class="mt-32 max-w-5xl mx-auto fade-in-up">
+                <div class="journal-card">
+                    <div class="text-center mb-16 relative z-10">
+                        <h2 class="serif text-5xl font-bold mb-4 text-navy">Personal Reflection</h2>
+                        <div class="w-24 h-1 bg-gradient-to-r from-pink-400 to-orange-400 mx-auto rounded-full"></div>
+                    </div>
+                    <div class="prose prose-xl mx-auto text-slate-600 leading-relaxed space-y-8 italic text-center relative z-10 font-light">
+                        <p>
+                            Our Cebu tour was one of the most memorable and meaningful experiences I have ever had. It was not
+                            only a chance to travel and explore a beautiful city, but also an opportunity to learn from
+                            different companies and educational destinations that are related to our field of study. This tour
+                            helped me realize that learning does not only happen inside the classroom, but also through
+                            real-world experiences.
+                        </p>
+                        <p>
+                            During our visit to places such as FABLAB UP Cebu, TP-CITP, RIVAN IT Cebu, Mata Technologies, and
+                            Fine Upgrades, I was amazed by how technology continues to grow and improve businesses and
+                            communities. Seeing actual workplaces, modern equipment, and professionals in action inspired me to
+                            appreciate the importance of innovation, creativity, and continuous learning. It made me imagine
+                            myself working in a similar environment someday.
+                        </p>
+                        <p>
+                            One of the biggest lessons I learned from this tour is that success requires dedication, skills,
+                            and adaptability. The people we encountered shared how technology changes rapidly, which means we
+                            must continue learning and improving ourselves to stay competitive in the future. This inspired me
+                            to take my studies more seriously and develop the skills needed for my chosen career.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cebu Highlights Gallery -->
+            <div class="mt-40 fade-in-up w-full">
+                <div class="text-center mb-20">
+                    <span class="text-rose-400 font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Memories</span>
+                    <h2 class="serif text-5xl md:text-7xl font-bold text-white mb-8">Cebu Highlights</h2>
+                    <div class="w-32 h-1.5 bg-gradient-to-r from-rose-500 to-orange-400 mx-auto rounded-full mb-8"></div>
+                    <p class="text-gray-400 italic max-w-2xl mx-auto text-xl font-light">Capturing the spirit of our journey through the historic streets and vibrant landmarks of Cebu.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                    <div class="image-card relative group rounded-[2rem] overflow-hidden shadow-2xl border border-white/5">
+                        <img src="images/week1/Cebutrip/656914433_10214686267706534_7094492289699689733_n.jpg" alt="Magellan's Cross Group" class="w-full h-auto transform transition duration-700">
+                    </div>
+                    <div class="image-card relative group rounded-[2rem] overflow-hidden shadow-2xl border border-white/5">
+                        <img src="images/week1/Cebutrip/657213037_10214686266346500_8988009299758055100_n.jpg" alt="Cebu Trip" class="w-full h-auto transform transition duration-700">
+                    </div>
+                    <div class="image-card relative group rounded-[2rem] overflow-hidden shadow-2xl border border-white/5">
+                        <img src="images/week1/Cebutrip/657258466_10214686268346550_7116996773057258083_n.jpg" alt="Cebu Trip" class="w-full h-auto transform transition duration-700">
+                    </div>
+                    <div class="image-card relative group rounded-[2rem] overflow-hidden shadow-2xl border border-white/5">
+                        <img src="images/week1/Cebutrip/657355272_10214686268106544_4965750625185889155_n.jpg" alt="Cebu Trip" class="w-full h-auto transform transition duration-700">
+                    </div>
+                    <div class="image-card relative group rounded-[2rem] overflow-hidden shadow-2xl border border-white/5">
+                        <img src="images/week1/Cebutrip/658374711_10214686268026542_8224014659005944718_n.jpg" alt="Cebu Trip" class="w-full h-auto transform transition duration-700">
+                    </div>
+                    <div class="image-card relative group rounded-[2rem] overflow-hidden shadow-2xl border border-white/5">
+                        <img src="images/week1/Cebutrip/658392582_10214686268506554_7442280736072336962_n.jpg" alt="Cebu Trip" class="w-full h-auto transform transition duration-700">
+                    </div>
+                    <div class="image-card relative group rounded-[2rem] overflow-hidden shadow-2xl border border-white/5">
+                        <img src="images/week1/Cebutrip/659897554_10214686265146470_1076678426354780770_n.jpg" alt="Cebu Trip" class="w-full h-auto transform transition duration-700">
+                    </div>
                 </div>
             </div>
         </div>
