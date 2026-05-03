@@ -13,20 +13,7 @@
     --p-mint: #C1F0C1;
     --text-main: #5D5D5D;
     --accent: #FF9AA2;
-    --bg-main: #FFFBFC;
-    --card-bg: rgba(255, 255, 255, 0.7);
-    --border-color: rgba(255, 255, 255, 0.5);
-    --shadow-color: rgba(255, 182, 193, 0.1);
-}
-
-.dark {
-    --text-main: #E5E7EB;
-    --bg-main: #111827;
-    --card-bg: rgba(31, 41, 55, 0.7);
-    --border-color: rgba(55, 65, 81, 0.5);
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --p-pink: #F472B6;
-    --p-blue: #60A5FA;
+    --bg-main: #FFF5F7; /* Soft aesthetic pink */
 }
 
 body {
@@ -124,11 +111,11 @@ h3,
 
 /* Custom Utilities */
 .glass-card {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 24px;
-    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 

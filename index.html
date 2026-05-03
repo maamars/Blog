@@ -6,16 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Little Corner | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-        }
-    </script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --enson-beige: #F9F7F2;
+            --enson-beige: #FFF0F3; /* Pinker beige */
             --enson-gray: #717171;
             --enson-black: #1A1A1A;
             --enson-border: #EAEAEA;
@@ -23,7 +18,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FFFFFF;
+            background: linear-gradient(to bottom, #FFF5F7, #FDF0F3);
             color: var(--enson-black);
             line-height: 1.7;
         }
@@ -100,7 +95,7 @@
     </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-[#FFF5F7]">
     <!-- Navigation -->
         <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -122,10 +117,6 @@
                         <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
                     </div>
                 </div>
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-pink-50 dark:hover:bg-gray-800 transition-all duration-300 ml-2" title="Toggle Dark/Light Mode">
-                    <span class="dark:hidden text-xl">🌙</span>
-                    <span class="hidden dark:inline text-xl">☀️</span>
-                </button>
             </div>
             <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
         </div>
@@ -137,14 +128,16 @@
         <button class="absolute top-6 right-6 text-3xl" id="close-menu">✕</button>
         <span class="title-font text-4xl text-white mb-4">Dreamy Journal</span>
         <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="acknowledgement.html" class="hover:text-white transition-colors">Acknowledgement</a>
         <a href="about.html" class="hover:text-white transition-colors">My Profile</a>
         <a href="school.html" class="hover:text-white transition-colors">School Profile</a>
         <a href="industry.html" class="hover:text-white transition-colors">Industry Profile</a>
         <a href="weeks/index.html" class="hover:text-white transition-colors">OJT Blogs</a>
+        <a href="gallery.html" class="hover:text-white transition-colors">Gallery</a>
     </div>
 
     <!-- Hero Section -->
-    <header class="pt-52 pb-32 bg-white">
+    <header class="pt-52 pb-32 bg-[#FFF5F7]">
         <div class="container mx-auto px-6 text-center">
             <h1 class="serif text-5xl md:text-7xl mb-6 tracking-tight">Welcome to My Little <br class="hidden md:block"> Corner of Thoughts</h1>
             <p class="text-enson-gray text-lg md:text-xl max-w-xl mx-auto mb-12 font-light italic">
@@ -155,76 +148,36 @@
     </header>
 
     <!-- Featured Posts -->
-    <section class="pb-32">
+    <section class="pb-16">
         <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <span class="text-xs uppercase tracking-widest text-enson-gray mb-2 block">Curated Content</span>
-                    <h2 class="serif text-3xl">Featured Stories</h2>
+            <div class="flex justify-center items-center mb-12">
+                <div class="text-center">
+                    <h2 class="serif text-4xl">My OJT Group Mates</h2>
                 </div>
-                <a href="weeks/index.html" class="text-sm uppercase tracking-widest border-b border-black pb-1">View All</a>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-10">
-                <!-- Featured Post 1 -->
-                <div class="post-card group cursor-pointer" onclick="location.href='weeks/week10.html'">
-                    <div class="aspect-[4/3] overflow-hidden">
-                        <img src="images/week1/day 5/594508902_26026925826900155_7655644193951777624_n.jpg" alt="Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-enson-gray mb-3 block">Internship • Week 10</span>
-                        <h3 class="serif text-xl mb-4 group-hover:text-enson-gray transition-colors">Busy Days: Preparing the Office for Visitors</h3>
-                        <p class="text-enson-gray text-sm line-clamp-2 font-light">Behind the scenes of our office preparations and the excitement of welcoming guests.</p>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <div class="overflow-hidden rounded-3xl shadow-sm">
+                    <img src="images/group/638837901_2706021753117514_3882861771527826429_n.png" alt="Group Mate" class="w-full h-auto">
                 </div>
-
-                <!-- Featured Post 2 -->
-                <div class="post-card group cursor-pointer" onclick="location.href='researchfest.html'">
-                    <div class="aspect-[4/3] overflow-hidden">
-                        <img src="images/week1/april 22/682704672_965911519484698_5520464365719633732_n.jpg" alt="Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-enson-gray mb-3 block">Events • Academic</span>
-                        <h3 class="serif text-xl mb-4 group-hover:text-enson-gray transition-colors">Innovations & Ideas: The Research Fest Experience</h3>
-                        <p class="text-enson-gray text-sm line-clamp-2 font-light">Exploring the latest student innovations and the vibrant atmosphere of our annual research festival.</p>
-                    </div>
+                <div class="overflow-hidden rounded-3xl shadow-sm">
+                    <img src="images/group/90ded80e-ffca-4e58-9c34-5b8ef6994ac9.jpg" alt="Group Mate" class="w-full h-auto">
                 </div>
-
-                <!-- Featured Post 3 -->
-                <div class="post-card group cursor-pointer" onclick="location.href='eductour.html'">
-                    <div class="aspect-[4/3] overflow-hidden">
-                        <img src="images/week1/Cebutrip/675865223_3350171638612106_2984920233630650965_n.jpg" alt="Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-enson-gray mb-3 block">Travel • Exploration</span>
-                        <h3 class="serif text-xl mb-4 group-hover:text-enson-gray transition-colors">Wanderlust: Insights from our Eductour Journey</h3>
-                        <p class="text-enson-gray text-sm line-clamp-2 font-light">A personal reflection on the places visited and the lessons learned outside the classroom.</p>
-                    </div>
+                <div class="overflow-hidden rounded-3xl shadow-sm">
+                    <img src="images/group/hahha.png" alt="Group Mate" class="w-full h-auto">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="py-24 bg-enson-beige">
-        <div class="container mx-auto px-6 text-center">
-            <span class="text-xs uppercase tracking-widest text-enson-gray mb-6 block">Explore Topics</span>
-            <div class="flex flex-wrap justify-center gap-12">
-                <a href="#" class="category-pill serif text-xl italic capitalize">Personal</a>
-                <a href="#" class="category-pill serif text-xl italic capitalize">Academic</a>
-                <a href="#" class="category-pill serif text-xl italic capitalize">Technology</a>
-                <a href="#" class="category-pill serif text-xl italic capitalize">Travel</a>
-                <a href="#" class="category-pill serif text-xl italic capitalize">Reflections</a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- About Me Section (Personal Vibe) -->
-    <section class="py-32">
+    <section class="pt-16 pb-32">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
                 <div class="w-full md:w-1/2">
-                    <img src="images/profile.png" alt="Hasmin Arsenal" class="w-full grayscale hover:grayscale-0 transition-all duration-1000">
+                    <img src="images/profile.png" alt="Hasmin Arsenal" class="w-full transition-all duration-1000">
                 </div>
                 <div class="w-full md:w-1/2">
                     <span class="text-xs uppercase tracking-widest text-enson-gray mb-4 block">The Blogger</span>
@@ -241,88 +194,15 @@
         </div>
     </section>
 
-    <!-- Recent Posts Section -->
-    <section class="py-32 bg-white border-t border-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="serif text-4xl">Recent Entries</h2>
-                <div class="w-12 h-px bg-black mx-auto mt-6"></div>
-            </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Recent Post 1 -->
-                <div class="group cursor-pointer" onclick="location.href='weeks/week1.html'">
-                    <div class="aspect-square overflow-hidden mb-6">
-                        <img src="images/week1/day 5/594042838_2159047321057883_2128795553102375806_n.jpg" alt="Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <span class="text-[10px] uppercase tracking-widest text-enson-gray block mb-2">Week 1</span>
-                    <h4 class="serif text-lg leading-snug">The Beginning of a New Chapter</h4>
-                </div>
 
-                <!-- Recent Post 2 -->
-                <div class="group cursor-pointer" onclick="location.href='weeks/week2.html'">
-                    <div class="aspect-square overflow-hidden mb-6">
-                        <img src="images/week1/maamzena.png" alt="Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <span class="text-[10px] uppercase tracking-widest text-enson-gray block mb-2">Week 2</span>
-                    <h4 class="serif text-lg leading-snug">Finding My Rhythm in the Workflow</h4>
-                </div>
 
-                <!-- Recent Post 3 -->
-                <div class="group cursor-pointer" onclick="location.href='weeks/week11.html'">
-                    <div class="aspect-square overflow-hidden mb-6">
-                        <img src="images/week1/april 22/684893567_1504081518086027_7477170787384798126_n.jpg" alt="Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <span class="text-[10px] uppercase tracking-widest text-enson-gray block mb-2">Week 11</span>
-                    <h4 class="serif text-lg leading-snug">Deep Dives and Technical Challenges</h4>
-                </div>
-
-                <!-- Recent Post 4 -->
-                <div class="group cursor-pointer" onclick="location.href='gallery.html'">
-                    <div class="aspect-square overflow-hidden mb-6">
-                        <img src="images/scc.jpg" alt="Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <span class="text-[10px] uppercase tracking-widest text-enson-gray block mb-2">Visuals</span>
-                    <h4 class="serif text-lg leading-snug">Moments Captured: The Full Gallery</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="py-32 bg-enson-beige">
-        <div class="container mx-auto px-6 max-w-2xl text-center">
-            <h2 class="serif text-3xl mb-4">Stay in the Loop</h2>
-            <p class="text-enson-gray mb-12 font-light">Subscribe to get the latest stories and reflections delivered directly to your inbox.</p>
-            <form class="flex flex-col sm:flex-row gap-6">
-                <input type="email" placeholder="Email Address" class="newsletter-input bg-transparent flex-1 py-3 text-sm">
-                <button type="submit" class="hero-btn bg-black text-white hover:bg-white hover:text-black">Subscribe</button>
-            </form>
-        </div>
-    </section>
 
     <!-- Footer -->
-    <footer class="py-20 border-t border-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
-                <div class="serif text-2xl font-bold">Dreamy Journal</div>
-                <div class="flex gap-8">
-                    <a href="index.html" class="nav-link-minimal">Home</a>
-                    <a href="about.html" class="nav-link-minimal">About</a>
-                    <a href="weeks/index.html" class="nav-link-minimal">Blog</a>
-                    <a href="#" class="nav-link-minimal">Contact</a>
-                </div>
-                <div class="flex gap-6 text-xl">
-                    <a href="#" class="hover:opacity-50 transition-opacity">🌸</a>
-                    <a href="#" class="hover:opacity-50 transition-opacity">✨</a>
-                    <a href="#" class="hover:opacity-50 transition-opacity">☁️</a>
-                </div>
-            </div>
-            <div class="mt-20 pt-10 border-t border-gray-50 text-center">
-                <p class="text-[10px] uppercase tracking-[0.2em] text-enson-gray">
-                    © 2026 Monthly Journal Project • Created by Hasmin Arsenal for Academic Submission
-                </p>
-            </div>
+    <footer class="bg-white/80 border-t border-pink-50 py-10 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="title-font text-2xl text-pink-300 mb-4">Dreamy Journal</div>
+            <p class="text-sm text-gray-400 font-medium">© 2026 Monthly Journal Project • Created for Academic Submission</p>
         </div>
     </footer>
 

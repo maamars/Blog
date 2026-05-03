@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Profile | My Dreamy Journal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-        }
-    </script>
     <link rel="stylesheet" href="css/style.css">
     <style>
         .section-card {
@@ -64,7 +59,7 @@
     </style>
 </head>
 
-<body class="bg-[#FFFBFC] min-h-screen">
+<body class="bg-[#FFF5F7] min-h-screen">
     <!-- Navigation -->
         <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -86,10 +81,6 @@
                         <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
                     </div>
                 </div>
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-pink-50 dark:hover:bg-gray-800 transition-all duration-300 ml-2" title="Toggle Dark/Light Mode">
-                    <span class="dark:hidden text-xl">🌙</span>
-                    <span class="hidden dark:inline text-xl">☀️</span>
-                </button>
             </div>
             <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
         </div>
@@ -101,10 +92,12 @@
         <button class="absolute top-6 right-6 text-3xl" id="close-menu">✕</button>
         <span class="title-font text-4xl text-white mb-4">Dreamy Journal</span>
         <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="acknowledgement.html" class="hover:text-white transition-colors">Acknowledgement</a>
         <a href="about.html" class="hover:text-white transition-colors">My Profile</a>
         <a href="school.html" class="hover:text-white transition-colors">School Profile</a>
         <a href="industry.html" class="hover:text-white transition-colors">Industry Profile</a>
         <a href="weeks/index.html" class="hover:text-white transition-colors">OJT Blogs</a>
+        <a href="gallery.html" class="hover:text-white transition-colors">Gallery</a>
     </div>
 
     <main class="pt-32 pb-20 px-6">
