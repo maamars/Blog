@@ -3,10 +3,34 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
     initMobileMenu();
     initGalleryLightbox();
     initScrollRevel();
+    initThemeToggle();
 });
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+}
+
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+
+    themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+}
 
 function initMobileMenu() {
     const menuBtn = document.getElementById('menu-btn');
