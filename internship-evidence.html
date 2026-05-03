@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Evidence | My Dreamy Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#FFF5F7] min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/50 border-b border-pink-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="title-font text-3xl font-bold text-[#FF9AA2]">Dreamy Journal</a>
+            <div class="hidden lg:flex gap-1 xl:gap-2">
+                <a href="index.html" class="nav-link ">Home</a>
+                <a href="acknowledgement.html" class="nav-link ">Acknowledgement</a>
+                <a href="about.html" class="nav-link ">My Profile</a>
+                <a href="school.html" class="nav-link ">School Profile</a>
+                <a href="industry.html" class="nav-link ">Industry Profile</a>
+                <a href="weeks/index.html" class="nav-link ">OJT Blogs</a>
+                <a href="gallery.html" class="nav-link ">Gallery</a>
+                <div class="relative group">
+                    <a class="nav-link flex items-center gap-1 cursor-pointer active">More <span class="text-[10px]">▼</span></a>
+                    <div class="absolute right-0 top-full mt-2 w-52 bg-white/95 backdrop-blur-md border border-pink-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
+                        <a href="researchfest.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold ">Research Fest</a>
+                        <a href="eductour.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold ">Eductour</a>
+                        <a href="internship-evidence.html" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold text-[#FF9AA2] bg-pink-50/50">Internship Evidence</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-pink-50 text-[#5D5D5D] hover:text-[#FF9AA2] transition-colors text-sm font-semibold">Trainings/Workshops</a>
+                    </div>
+                </div>
+            </div>
+            <button class="lg:hidden text-2xl text-pink-400" id="menu-btn">🌸</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#FFD1DC]/95 z-[60] flex flex-col items-center justify-center gap-8 text-2xl font-semibold hidden">
+        <button class="absolute top-6 right-6 text-3xl" id="close-menu">✕</button>
+        <span class="title-font text-4xl text-white mb-4">Dreamy Journal</span>
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="acknowledgement.html" class="hover:text-white transition-colors">Acknowledgement</a>
+        <a href="about.html" class="hover:text-white transition-colors">My Profile</a>
+        <a href="school.html" class="hover:text-white transition-colors">School Profile</a>
+        <a href="industry.html" class="hover:text-white transition-colors">Industry Profile</a>
+        <a href="weeks/index.html" class="hover:text-white transition-colors">OJT Blogs</a>
+        <a href="gallery.html" class="hover:text-white transition-colors">Gallery</a>
+    </div>
+
+    <!-- Gallery Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="container mx-auto">
+            <header class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Internship <span
+                        class="gradient-text italic">Evidence</span></h1>
+                <p class="text-gray-500 max-w-xl mx-auto">Official documents and records from the internship journey.</p>
+            </header>
+
+            <!-- Endorsement Section -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-bold">Endorsement Letter</h2>
+                    <div class="flex-1 h-px bg-pink-50"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group relative glass-card overflow-hidden shadow-sm p-4">
+                        <img src="images/week1/endorsement/679904543_1349989240526069_7387909816484210951_n.jpg" alt="Endorsement Letter"
+                            class="w-full h-auto group-hover:scale-105 transition-transform duration-700 rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contract Section -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-bold">Internship Contract</h2>
+                    <div class="flex-1 h-px bg-blue-50"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group relative glass-card overflow-hidden shadow-sm p-4">
+                        <img src="images/week1/internshipcontract/662262566_1322753889776613_3523619700028525961_n.jpg"
+                            alt="Internship Contract Page 1"
+                            class="w-full h-auto group-hover:scale-105 transition-transform duration-700 rounded-xl">
+                    </div>
+                    <div class="group relative glass-card overflow-hidden shadow-sm p-4">
+                        <img src="images/week1/internshipcontract/680074098_1593010841795955_6090324254162885008_n.jpg"
+                            alt="Internship Contract Page 2"
+                            class="w-full h-auto group-hover:scale-105 transition-transform duration-700 rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Letter Section -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-bold">Application Letter</h2>
+                    <div class="flex-1 h-px bg-pink-50"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group relative glass-card overflow-hidden shadow-sm p-4">
+                        <img src="images/week1/applicationletter/679725713_1298730502228098_6169729558796764716_n.jpg" alt="Application Letter"
+                            class="w-full h-auto group-hover:scale-105 transition-transform duration-700 rounded-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internship Criteria Section -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-bold">Internship Criteria</h2>
+                    <div class="flex-1 h-px bg-blue-50"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group relative glass-card overflow-hidden shadow-sm p-4">
+                        <img src="images/week1/criteria/674118690_1693046048385981_4189418214765617477_n.jpg" alt="Internship Criteria"
+                            class="w-full h-auto group-hover:scale-105 transition-transform duration-700 rounded-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white/80 border-t border-pink-50 py-10 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="title-font text-2xl text-pink-300 mb-4">Dreamy Journal</div>
+            <p class="text-sm text-gray-400 font-medium">© 2026 Monthly Journal Project • Created for Academic Submission</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
